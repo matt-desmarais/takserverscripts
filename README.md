@@ -56,5 +56,5 @@ remove&nbsp;&nbsp;&lt;input auth="anonymous" _name="stdudp" protocol="udp" port=
 remove&nbsp;&nbsp;&lt;input auth="anonymous" _name="streamtcp" protocol="stcp" port="8088"/&gt;</br>
 &emsp;&emsp;&emsp;&emsp;&lt;connector port="8443" _name="https"/&gt;</br>
 &emsp;&emsp;&emsp;&emsp;&lt;connector port="8444" useFederationTruststore="true" _name="fed_https"/&gt;</br>
-&emsp;&emsp;&emsp;&emsp;&lt;connector port="8446" _name="cert_https" truststorePass="password" truststoreFile="certs/files/trust...</br>
+&emsp;&emsp;&emsp;&emsp;&lt;connector port="8446" _name="cert_https"...</br>
 remove&nbsp;&nbsp;&lt;connector port="8080" tls="false" _name="http_plaintext"/&gt;</br>
