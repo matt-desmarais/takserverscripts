@@ -27,7 +27,7 @@ sudo sed -i 's+PASS=.*+PASS='$pass'+g' /opt/tak/certs/cert-metadata.sh
 
 #Make the certs and edit the CoreConfig.xml
 read -p "Enter CA cert name: " cacert
-read -p "Enyer Server cert name: " server
+read -p "Enter Server cert name: " server
 
 cd /opt/tak/certs/
 
@@ -55,9 +55,6 @@ sudo sed -i '70 a\        <tls keystore="JKS" keystoreFile="certs/files/'$server
 #replace fed truststore line
 sudo sed -i '75d' /opt/tak/CoreConfig.xml
 sudo sed -i '74 a\           <tls keystore="JKS" keystoreFile="certs/files/'$server'.jks" keystorePass="'$pass'" truststore="JKS" truststoreFile="certs/files/fed-truststore.jks" truststorePass="'$pass'" keymanager="SunX509"/>' /opt/tak/CoreConfig.xml
-
-echo "Cert Setup Complete, next step letsencrypt"
-read -p "Press enter to continue"
 
 #install letsencrypt
 sudo apt install snapd -y
