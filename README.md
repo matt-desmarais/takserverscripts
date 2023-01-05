@@ -14,10 +14,11 @@ chmod +x install.sh
 Enter Admin name:
 </br>
 Enter Admin password:
-
+</br></br>
 Wait for script to do its thing, it can take anywhere from 5 minutes (good vps) to 40 minutes (pi 4)
-
+</br></br>
 You must have a public ip/hostname to use this script in order for letsencrypt to work properly
+</br>
 chmod +x certs+letsencrypt.sh
 </br>
 ./certs+letsencrypt.sh
@@ -45,3 +46,5 @@ Enter Server cert name:
 This script won't take long to run and needs your attention
 
 Answer YES to any Y/N prompts
+</br>
+Congrats you are now ready to use your Tak server
