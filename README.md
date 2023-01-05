@@ -18,7 +18,7 @@ Enter Admin password:
 Wait for script to do its thing, it can take anywhere from 5 minutes (good vps) to 40 minutes (pi 4)
 </br></br>
 You must have a public ip/hostname to use this script in order for letsencrypt to work properly</br>
-If you dont have public ip/hostname then use certs-only.sh
+If you dont have public ip/hostname then use certs-only.sh</br>
 </br>
 chmod +x certs+letsencrypt.sh
 </br>
