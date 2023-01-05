@@ -68,16 +68,16 @@ domaindash=${domain//./-}
 
 #setup ssl keys
 echo -e '\n\nMake up your Export Password\n'
-sudo openssl pkcs12 -export -in /etc/letsencrypt/live/$domain/fullchain.pem -inkey /etc/letsencrypt/live/$domain/privkey.pem -name $domaindash -out ~/$domaindash.p12
+sudo openssl pkcs12 -export -in /etc/letsencrypt/live/$domain/fullchain.pem -inkey /etc/letsencrypt/live/$domain/privkey.pem -name $domaindash -out ~/takserverscripts/$domaindash.p12
 echo -e '\n\nUse your Export Password\n'
-sudo keytool -importkeystore -deststorepass $pass -destkeystore ~/$domaindash.jks -srckeystore ~/$domaindash.p12 -srcstoretype PKCS12
+sudo keytool -importkeystore -deststorepass $pass -destkeystore ~/takserverscripts/$domaindash.jks -srckeystore ~/takserverscripts/$domaindash.p12 -srcstoretype PKCS12
 echo -e '\n\nuse '$pass' for next input\n'
-sudo keytool -import -alias bundle -trustcacerts -file /etc/letsencrypt/live/$domain/fullchain.pem -keystore ~/$domaindash.jks
+sudo keytool -import -alias bundle -trustcacerts -file /etc/letsencrypt/live/$domain/fullchain.pem -keystore ~/takserverscripts/$domaindash.jks
 
 #put ssl key files into /opt/tak/certs/files/letsencrypt
 sudo mkdir /opt/tak/certs/files/letsencrypt
-sudo cp ~/$domaindash.jks /opt/tak/certs/files/letsencrypt
-sudo cp ~/$domaindash.p12 /opt/tak/certs/files/letsencrypt
+sudo cp ~/takserverscripts/$domaindash.jks /opt/tak/certs/files/letsencrypt
+sudo cp ~/takserverscripts/$domaindash.p12 /opt/tak/certs/files/letsencrypt
 
 #add port 8446 ssl cert to CoreConfig.xml
 port8446='<connector port="8446" _name="cert_https" truststorePass="'$pass'" truststoreFile="certs/files/truststore-'$cacert'.jks" truststore="JKS" keystorePass="'$pass'" keystoreFile="certs/files/letsencrypt/'$domaindash'.jks" keystore="JKS" clientAuth="false"/>'
