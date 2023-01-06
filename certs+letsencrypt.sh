@@ -4,8 +4,8 @@ read -p "Enter state: " state
 read -p "Enter city: " city
 read -p "Enter organization: " org
 read -p "Enter orgranizational unit: " org_unit
-read -p "Enter capass: " capass
-read -p "Enter pass: " pass
+read -p "Enter capass 6+ characters: " capass
+read -p "Enter pass 6+ characters: " pass
 
 #refresh CoreConfig.xml if script has ran before
 sudo cp /opt/tak/CoreConfig.xml.BEFORESCRIPTRAN /opt/tak/CoreConfig.xml
