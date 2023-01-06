@@ -51,6 +51,8 @@ sudo sed -i '70 a\        <tls keystore="JKS" keystoreFile="certs/files/'$server
 #replace fed truststore line
 sudo sed -i '75d' /opt/tak/CoreConfig.xml
 sudo sed -i '74 a\           <tls keystore="JKS" keystoreFile="certs/files/'$server'.jks" keystorePass="'$pass'" truststore="JKS" truststoreFile="certs/files/fed-truststore.jks" truststorePass="'$pass'" keymanager="SunX509"/>' /opt/tak/CoreConfig.xml
+#delete duplicate line
+sudo sed -i '4d' /opt/tak/CoreConfig.xml
 
 sudo systemctl restart takserver
 echo -e "wait for server to come up then you are good to go"
