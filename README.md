@@ -32,9 +32,9 @@ Enter organization:
 </br>
 Enter orgranizational unit:
 </br>
-Enter capass: 
+Enter capass 6+ characters: 
 </br>
-Enter pass: 
+Enter pass 6+ characters: 
 </br>
 Enter the domain: 
 </br>
