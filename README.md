@@ -52,10 +52,6 @@ Congrats you are now ready to use your Tak server
 
 If you want to secure your server edit /opt/tak/CoreConfig.xml
 </br>
-&emsp;&emsp;&emsp;&emsp;&lt;input _name="stdssl" auth="x509" protocol="tls" port="8089" /&gt;</br>
 remove&nbsp;&nbsp;&lt;input auth="anonymous" _name="stdudp" protocol="udp" port="8087"/&gt;</br>
 remove&nbsp;&nbsp;&lt;input auth="anonymous" _name="streamtcp" protocol="stcp" port="8088"/&gt;</br>
-&emsp;&emsp;&emsp;&emsp;&lt;connector port="8443" _name="https"/&gt;</br>
-&emsp;&emsp;&emsp;&emsp;&lt;connector port="8444" useFederationTruststore="true" _name="fed_https"/&gt;</br>
-&emsp;&emsp;&emsp;&emsp;&lt;connector port="8446" _name="cert_https"...</br>
 remove&nbsp;&nbsp;&lt;connector port="8080" tls="false" _name="http_plaintext"/&gt;</br>
