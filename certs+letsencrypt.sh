@@ -82,5 +82,7 @@ sudo cp ~/takserverscripts/$domaindash.p12 /opt/tak/certs/files/letsencrypt
 #add port 8446 ssl cert to CoreConfig.xml
 port8446='<connector port="8446" _name="cert_https" truststorePass="'$pass'" truststoreFile="certs/files/truststore-'$cacert'.jks" truststore="JKS" keystorePass="'$pass'" keystoreFile="certs/files/letsencrypt/'$domaindash'.jks" keystore="JKS" clientAuth="false"/>'
 sudo sed -i "s|<connector port=\"8446\" clientAuth=\"false\" _name=\"cert_https\"/>|$port8446|g" /opt/tak/CoreConfig.xml
+#delete duplicate line
+sudo sed -i '4d' /opt/tak/CoreConfig.xml
 sudo systemctl restart takserver
 echo -e "wait for server to come up then you are good to go"
